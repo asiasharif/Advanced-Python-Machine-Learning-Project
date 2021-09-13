@@ -1,0 +1,130 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled",
+      "provenance": [],
+      "authorship_tag": "ABX9TyNkbWdTRz73CBAnetG6TXjG",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/asiasharif/Advanced-Python-Machine-Learning-Project/blob/main/California\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 193
+        },
+        "id": "Mur4DsQ-dZJd",
+        "outputId": "d5c2f6a1-5caa-4e3c-90b7-14087f3e5c23"
+      },
+      "source": [
+        "import pandas as pd\n",
+        "\n",
+        "california_housing_dataframe = pd.read_csv(\"https://download.mlcc.google.com/mledu-datasets/california_housing_train.csv\"\n",
+        ", sep=\",\")\n",
+        "california_housing_dataframe.describe()\n",
+        "california_housing_dataframe.head()\n",
+        "city_names = pd.Series(['San Francisco', 'San Jose', 'Sacramento'])\n",
+        "population = pd.Series([852469, 1015785, 485199])\n",
+        "\n",
+        "cities = pd.DataFrame({ 'City name': city_names, 'Population': population}) #finding data and mapping it, cities name of variable\n",
+        "print(type(cities['City name'])) #prints city names\n",
+        "cities['City name']\n",
+        "\n",
+        "print(type(cities['City name'][1]))\n",
+        "cities['City name'][1]\n",
+        "\n",
+        "print(type(cities[0:2]))\n",
+        "cities[0:]"
+      ],
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "<class 'pandas.core.series.Series'>\n",
+            "<class 'str'>\n",
+            "<class 'pandas.core.frame.DataFrame'>\n"
+          ]
+        },
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>City name</th>\n",
+              "      <th>Population</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>San Francisco</td>\n",
+              "      <td>852469</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>San Jose</td>\n",
+              "      <td>1015785</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>Sacramento</td>\n",
+              "      <td>485199</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "       City name  Population\n",
+              "0  San Francisco      852469\n",
+              "1       San Jose     1015785\n",
+              "2     Sacramento      485199"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 10
+        }
+      ]
+    }
+  ]
+}
